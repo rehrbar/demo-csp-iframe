@@ -2,9 +2,19 @@
     <head>
         <title>My Awesome Website</title>
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src advert.lvh.me:8080" />
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
         <h1>Awesome Website 2</h1>
         <iframe src="http://advert.lvh.me:8080" width="400" height="200"></iframe> 
+        <div class="jstarget">No JS executed</div>
+        <div class="jsinlinetarget">No inline JS executed</div>
+        <script src="main.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        (function (d) {
+            const t = d.querySelector(".jsinlinetarget");
+            t.innerHTML = "<storng>Inline JS is enabled</strong>";
+        })(document);
+        </script>
     </body>
 </html>
